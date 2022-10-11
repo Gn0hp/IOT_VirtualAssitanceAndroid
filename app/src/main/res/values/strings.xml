@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Speech_Recognition</string>
+    <string name="returned_text">Returned Text</string>
+    <string name="returned_error">Returned Error</string>
+</resources>
