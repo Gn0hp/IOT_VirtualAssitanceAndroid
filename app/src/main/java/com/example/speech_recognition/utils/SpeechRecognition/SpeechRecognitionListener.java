@@ -47,6 +47,8 @@ public class SpeechRecognitionListener implements RecognitionListener
     public void onPartialResults(Bundle partialResults) {
         if (partialResults != null && mListener != null) {
             ArrayList<String> texts = partialResults.getStringArrayList("android.speech.extra.UNSTABLE_TEXT");
+            Toast.makeText(mContext, texts.get(0), Toast.LENGTH_SHORT).show();
+            System.out.println(texts);
             mListener.onStreamingResult(texts);
         }
     }
@@ -55,6 +57,8 @@ public class SpeechRecognitionListener implements RecognitionListener
     public void onResults(Bundle results) {
         if (results != null && mListener != null) {
             ArrayList<String> arr = results.getStringArrayList(SpeechRecognizer.RESULTS_RECOGNITION);
+            Toast.makeText(mContext, arr.get(0), Toast.LENGTH_SHORT).show();
+            System.out.println(arr);
             mListener.onResults(arr);
         }
     }

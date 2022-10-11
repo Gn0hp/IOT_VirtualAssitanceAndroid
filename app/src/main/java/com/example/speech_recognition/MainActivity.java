@@ -34,6 +34,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 startActivity(new Intent(getApplicationContext(), SpeechRecognizing.class));
                 // .putExtra("key", value)....;
+                System.out.println("change");
             }
         });
     }

@@ -14,16 +14,23 @@ import android.speech.RecognizerIntent;
 import android.speech.SpeechRecognizer;
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ProgressBar;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import com.example.speech_recognition.handleResult.onResultsReady;
+import com.example.speech_recognition.utils.SpeechRecognition.SpeechRecognitionListener;
+import com.example.speech_recognition.utils.SpeechRecognition.SpeechRecognizerManager;
 
 public class SpeechRecognizing extends AppCompatActivity {
-    private SpeechRecognizer speechRecognizer = null;
+    private SpeechRecognizerManager speechManager = null;
     private TextView returnedText, returnedErr;
     private ProgressBar progressBar;
-    private Intent recognizerIntent;
-    private String language = "vi"; //"en"
     private String LOG_TAG="Voice_Recognition_Activity";
+    private Button startListenerBtn;
+    private onResultsReady mListener;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -32,15 +39,16 @@ public class SpeechRecognizing extends AppCompatActivity {
         returnedErr = findViewById(R.id.textViewReturnError);
         progressBar = findViewById(R.id.progressBar);
         progressBar.setVisibility(View.INVISIBLE);
+        startListenerBtn = findViewById(R.id.startListenerBtn);
 
-//        resetSpeechRecognizer(speechRecognizer);
-        progressBar.setVisibility(View.VISIBLE);
-        progressBar.setIndeterminate(true);
+        speechManager = new SpeechRecognizerManager(getApplicationContext(),mListener);
 
-//        int permissionCheck = ContextCompat.checkSelfPermission(getApplicationContext(), Manifest.permission.RECORD_AUDIO);
-//        if(permissionCheck != PackageManager.PERMISSION_GRANTED){
-//            ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.RECORD_AUDIO},1 );
-//        }
+        resetSpeechRecognizer(speechManager.mSpeechRecognizer);
+        setUpEntitiesEvent();
+        int permissionCheck = ContextCompat.checkSelfPermission(getApplicationContext(), Manifest.permission.RECORD_AUDIO);
+        if(permissionCheck != PackageManager.PERMISSION_GRANTED){
+            ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.RECORD_AUDIO},1 );
+        }
 
     }
     public void resetSpeechRecognizer(SpeechRecognizer speech){
@@ -52,21 +60,25 @@ public class SpeechRecognizing extends AppCompatActivity {
             Log.i(LOG_TAG, "isRecognitionAvailable: "+ SpeechRecognizer.isOnDeviceRecognitionAvailable(this));
         }
         if(SpeechRecognizer.isRecognitionAvailable(this)){
-            speechRecognizer.setRecognitionListener((RecognitionListener) this);
+            speech.setRecognitionListener(new SpeechRecognitionListener());
         }else finish();
     }
-    private void setRecognizerIntent() {
-        recognizerIntent = new Intent(RecognizerIntent.ACTION_RECOGNIZE_SPEECH);
-        recognizerIntent.putExtra(RecognizerIntent.EXTRA_LANGUAGE_PREFERENCE, "en");
-        recognizerIntent.putExtra(RecognizerIntent.EXTRA_LANGUAGE_MODEL, RecognizerIntent.LANGUAGE_MODEL_FREE_FORM);
-        recognizerIntent.putExtra(RecognizerIntent.EXTRA_MAX_RESULTS,3 );
-
-        // Create new intent
-        recognizerIntent.putExtra(RecognizerIntent.EXTRA_LANGUAGE, language);
-        recognizerIntent.putExtra(RecognizerIntent.EXTRA_LANGUAGE_PREFERENCE, language);
-        recognizerIntent.putExtra(RecognizerIntent.EXTRA_LANGUAGE_MODEL, language);
-        recognizerIntent.putExtra(RecognizerIntent.EXTRA_ONLY_RETURN_LANGUAGE_PREFERENCE, language);
-        recognizerIntent.putExtra(RecognizerIntent.EXTRA_PARTIAL_RESULTS, true); // For streaming result
-        recognizerIntent.putExtra(RecognizerIntent.EXTRA_SPEECH_INPUT_COMPLETE_SILENCE_LENGTH_MILLIS, 20000);
+    private void setUpEntitiesEvent(){
+        startListenerBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(startListenerBtn.getText().equals("Stop Listenning")){
+                    progressBar.setVisibility(View.INVISIBLE);
+                    progressBar.setIndeterminate(false);
+                    speechManager.stop();
+                    startListenerBtn.setText("Start Listenning");
+                }
+                progressBar.setVisibility(View.VISIBLE);
+                progressBar.setIndeterminate(true);
+                speechManager.startListening();
+                startListenerBtn.setText("Stop Listenning");
+            }
+        });
     }
+
 }

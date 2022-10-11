@@ -2,6 +2,8 @@ package com.example.speech_recognition.utils.SpeechRecognition;
 
 import android.content.Context;
 import android.content.Intent;
+import android.os.Build;
+import android.speech.RecognitionListener;
 import android.speech.RecognizerIntent;
 import android.speech.SpeechRecognizer;
 import android.util.Log;
@@ -10,13 +12,14 @@ import com.example.speech_recognition.handleResult.onResultsReady;
 
 public class SpeechRecognizerManager {
     private final static String TAG = "SpeechRecognizerManager";
-    protected SpeechRecognizer mSpeechRecognizer;
-    protected Intent mSpeechRecognizerIntent;
-    private Context mContext;
+    public SpeechRecognizer mSpeechRecognizer = null;
+    public Intent mSpeechRecognizerIntent;
+    public Context mContext;
     protected boolean mIsListening;
-    protected String language = "vi"; //"en"
+    protected String language = "en"; //"en"
     protected long timeout = 2000l; // 2000 ms
-
+    private Intent recognizerIntent;
+    private String LOG_TAG="Voice_Recognition_Activity";
     private onResultsReady mListener;
 
     public SpeechRecognizerManager(Context context, onResultsReady listener)
@@ -40,12 +43,11 @@ public class SpeechRecognizerManager {
         mSpeechRecognizerIntent.putExtra(RecognizerIntent.EXTRA_ONLY_RETURN_LANGUAGE_PREFERENCE, language);
         mSpeechRecognizerIntent.putExtra(RecognizerIntent.EXTRA_PARTIAL_RESULTS, true); // For streaming result
         mSpeechRecognizerIntent.putExtra(RecognizerIntent.EXTRA_SPEECH_INPUT_COMPLETE_SILENCE_LENGTH_MILLIS, timeout);
+        mSpeechRecognizerIntent.putExtra(RecognizerIntent.EXTRA_MAX_RESULTS,3 );
 
-        // Start listening
-        startListening();
     }
 
-    private void startListening()
+    public void startListening()
     {
         if (!mIsListening) {
             mIsListening = true;
@@ -80,5 +82,3 @@ public class SpeechRecognizerManager {
         return mIsListening;
     }
 }
-
-// ta

@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".SpeechReconizing">
+    tools:context=".SpeechRecognizing">
 
     <TextView
         android:id="@+id/textViewReturnText"
@@ -18,15 +18,30 @@
         android:id="@+id/textViewReturnError"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="35dp"
         android:text="@string/returned_error"
-        tools:layout_editor_absoluteX="16dp"
-        tools:layout_editor_absoluteY="196dp" />
+        app:layout_constraintTop_toBottomOf="@+id/textViewReturnText"
+        tools:layout_editor_absoluteX="16dp" />
 
     <ProgressBar
         android:id="@+id/progressBar"
         style="?android:attr/progressBarStyle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        tools:layout_editor_absoluteX="176dp"
-        tools:layout_editor_absoluteY="343dp" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/startListenerBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/start_listenning"
+        app:layout_constraintBottom_toTopOf="@+id/progressBar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.914" />
 </androidx.constraintlayout.widget.ConstraintLayout>

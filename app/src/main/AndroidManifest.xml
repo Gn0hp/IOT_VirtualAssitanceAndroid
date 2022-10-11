@@ -16,7 +16,7 @@
         android:theme="@style/Theme.Speech_Recognition"
         tools:targetApi="31">
         <activity
-            android:name=".SpeechReconizing"
+            android:name=".SpeechRecognizing"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
