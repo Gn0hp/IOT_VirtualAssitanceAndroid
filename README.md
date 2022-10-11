@@ -5,7 +5,7 @@
 > Latest update on [develop branch](https://github.com/Gn0hp/PTIT_IOT_VirtualAssitanceAndroid/tree/develop).
 
 1. Team members
-  - [Nguyễn Trung Kiên](https://github.com/kiennt2781) B19DCCN
+  - [Nguyễn Trung Kiên](https://github.com/kiennt2781) B19DCCN346
   - [Phạm Việt Hoàng](https://github.com/pvhoang245) B19DCCN
   - [Trần Khắc Phong](https://github.com/Gn0hp) B19DCCN502
 
