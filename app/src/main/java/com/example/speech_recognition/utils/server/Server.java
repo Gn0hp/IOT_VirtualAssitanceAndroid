@@ -11,7 +11,7 @@ public class Server {
         this.host=host;
         this.port=port;
     }
-    public void send(String message,int state) throws IOException {
+    public int send(String message,int state) throws IOException {
         try(Socket client = new Socket(host, port)){
             DataOutputStream dout = new DataOutputStream(client.getOutputStream());
             dout.writeUTF(message);
@@ -19,6 +19,7 @@ public class Server {
             dout.close();
             System.out.println("done send!");
             if(state==0) state=1;
+            return state;
         }
 
     }
