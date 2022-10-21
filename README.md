@@ -1,6 +1,6 @@
 # PTIT_IOT_VirtualAssitanceAndroid
 
-## BTL IOT PTIT 2022: Java spcket, Android, Speech Recoginition, Virtual Assistance
+## BTL IOT PTIT 2022: Java socket, Android, Speech Recoginition, Virtual Assistance, IOT
 
 > Latest update on [develop branch](https://github.com/Gn0hp/PTIT_IOT_VirtualAssitanceAndroid/tree/develop).
 
