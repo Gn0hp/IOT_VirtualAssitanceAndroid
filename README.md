@@ -15,7 +15,10 @@
     + WS2812 multiple leds
     + DHT11 (optional)
   - Code:
-    - Arduino IDE
+    - Arduino IDE:
+    	- File -> Preferences -> Paste 'http://arduino.esp8266.com/stable/package_esp8266com_index.json' to URLs
+    	- Board Manager -> Install esp8266.
+    	- Board Manager -> esp8266 -> NodeMCU 1.0 
     - library: 
       - WebSockets by Markus Sattler
       - Adafruit NeoPixel by Adafruit

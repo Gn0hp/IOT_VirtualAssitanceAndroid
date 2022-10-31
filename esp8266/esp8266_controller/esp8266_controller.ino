@@ -40,8 +40,8 @@ DHT dht(DHTPin, DHTTYPE);
 // ------------------------ END SETUP ------------------------------
 
 // Wifi and socket settings
-const char* ssid     = "Dung Duong";
-const char* password = "meomeogaugau";
+const char* ssid     = "";
+const char* password = "";
 unsigned int localPort = 7777;
 char packetBuffer[BUFFER_LEN];
 
@@ -98,6 +98,11 @@ void loop() {
       ws2812WithMusic();
     } else if(ledStripMode== LED_WARN_ON){
       ledWarn();
+    }else if(ledStripMode == LED_OFF){
+      for(int i=0;i<NUM_LEDS;++i){
+        ledstrip.setPixelColor(i,0,0,0);
+      }
+      ledstrip.show();
     }
   getRequestString(); 
 }
@@ -185,7 +190,10 @@ void getRequestString(){
     delay(1);
   if(request.indexOf("/LED=ON") != -1){
     ledStripMode= LED_ON;
-  } else if(request.indexOf("/MUSIC=ON") != -1){
+  }else if(request.indexOf("/LED=OFF")!= -1){
+    ledStripMode=LED_OFF;
+  }
+  else if(request.indexOf("/MUSIC=ON") != -1){
     ledStripMode= MUSIC_MODE_ON;
   }else if(request.indexOf("/LED=WARN")!= -1){
     ledStripMode= LED_WARN_ON;

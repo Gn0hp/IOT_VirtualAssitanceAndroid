@@ -257,7 +257,7 @@ if __name__ == '__main__':
         import pyqtgraph as pg
         from pyqtgraph.Qt import QtGui, QtCore
         # Create GUI window
-        app = QtGui.QApplication([])
+        # app = QtGui.QApplication([])
         view = pg.GraphicsView()
         layout = pg.GraphicsLayout(border=(100,100,100))
         view.setCentralItem(layout)
