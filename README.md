@@ -27,9 +27,9 @@
 ## 2. Execute
   - Hardware: 
     - ws2812 - esp8266 plug: 
-     - > 5v - vv
-	   - > din - rx
-	   - > gnd-gnd
+    	- > 5v - vv
+	- > din - rx
+	- > gnd-gnd
   - Code:
     - Arduino:
     **NOTIFY: If your ledstrip has less than 60 leds then only need <=5v supply, else you will have to need an distinguish supply >5v** 
