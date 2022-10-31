@@ -27,7 +27,7 @@
 ## 2. Execute
   - Hardware: 
     - ws2812 - esp8266 plug: 
-    	- > 5v - vv
+	- > 5v - vv
 	- > din - rx
 	- > gnd-gnd
   - Code:
