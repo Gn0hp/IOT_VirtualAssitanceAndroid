@@ -34,7 +34,7 @@
     - Arduino: <br>
     **NOTIFY: If your ledstrip has less than 60 leds then only need <=5v supply, else you will have to need an distinguish supply >5v** 
       - Modify NUM_LEDS with your own amount of led you have.
-      - Config ssid - password with your Wifi
+      - Config ssid - password with your Wifi.
       - (Optional for DHT11) Config API thingspeak key, channel,... to your own data.
       - Upload code to esp8266, you will receive a ip address, copy it !
     - Python: <br>
@@ -43,8 +43,8 @@
         > pip install numpy scipy pyqtgraph pyaudio 
         and pyqt5(I don't remember exactly name xD. Program will report error then when your run so let install it later as soon as you know exactly name :D)
       - Config UUP_IP in config.py to the ip address you saved.
-      - Config N_PIXELS in config.py to the amount of led you have on your ledstrip
+      - Config N_PIXELS in config.py to the amount of led you have on your ledstrip.
       - (Optional): If you want to use gui then change USE_GUI to True and un-comment  ** app = QtGui.QApplication([]) ** in visualization.py file.
-      - Run visualization.py file in terminal.
+      - Run visualization.py file in terminal.<br>
     *** Congratulation!! xD :V
      
