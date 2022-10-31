@@ -31,14 +31,14 @@
 	> din - rx <br>
 	> gnd-gnd
   - Code:
-    - Arduino:
+    - Arduino: <br>
     **NOTIFY: If your ledstrip has less than 60 leds then only need <=5v supply, else you will have to need an distinguish supply >5v** 
       - Modify NUM_LEDS with your own amount of led you have.
       - Config ssid - password with your Wifi
       - (Optional for DHT11) Config API thingspeak key, channel,... to your own data.
       - Upload code to esp8266, you will receive a ip address, copy it !
-    - Python: 
-    ** Suggest use anaconda virtual environment **
+    - Python: <br>
+    **Suggest use anaconda virtual environment**
       - Install package:
         > pip install numpy scipy pyqtgraph pyaudio 
         and pyqt5(I don't remember exactly name xD. Program will report error then when your run so let install it later as soon as you know exactly name :D)
