@@ -27,8 +27,8 @@
 ## 2. Execute
   - Hardware: 
     - ws2812 - esp8266 plug: 
-	> 5v - vv
-	> din - rx
+	> 5v - vv <br>
+	> din - rx <br>
 	> gnd-gnd
   - Code:
     - Arduino:
