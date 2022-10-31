@@ -15,21 +15,21 @@
     + WS2812 multiple leds
     + DHT11 (optional)
   - Code:
-    + Arduino IDE
-    + library: 
-      ++ WebSockets by Markus Sattler
-      ++ Adafruit NeoPixel by Adafruit
-      ++ ESP8266 and ESP32 OLED driver for SSD1306 displays by ThingPulse
-      ++ WiFi101 by Adafruit
-      ++ DHTSensor by Adafruit (optional)
+    - Arduino IDE
+    - library: 
+      - WebSockets by Markus Sattler
+      - Adafruit NeoPixel by Adafruit
+      - ESP8266 and ESP32 OLED driver for SSD1306 displays by ThingPulse
+      - WiFi101 by Adafruit
+      - DHTSensor by Adafruit (optional)
       
      
 ## 2. Execute
   - Hardware: 
     - ws2812 - esp8266 plug: 
-	- > 5v - vv
-	- > din - rx
-	- > gnd-gnd
+	> 5v - vv
+	> din - rx
+	> gnd-gnd
   - Code:
     - Arduino:
     **NOTIFY: If your ledstrip has less than 60 leds then only need <=5v supply, else you will have to need an distinguish supply >5v** 
