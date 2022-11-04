@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.example.speech_recognition.app-mergeDebugResources-23:/values-hy/values-hy.xml",
+            "outputFile": "com.example.speech_recognition.app-mergeDebugResources-24:/values-hy/values-hy.xml",
             "map": [
                 {
                     "source": "C:\\Users\\phong\\.gradle\\caches\\transforms-3\\fac35fa21dbd12379f5bfd01ae392218\\transformed\\material-1.5.0\\res\\values-hy\\values-hy.xml",

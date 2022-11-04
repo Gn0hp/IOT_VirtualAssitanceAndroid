@@ -2605,6 +2605,7 @@ id bounceBoth
 id bounceEnd
 id bounceStart
 id btnHello
+id btnStopMusic
 id buttonPanel
 id cache_measures
 id callMeasure
@@ -3579,6 +3580,7 @@ style Base_Widget_MaterialComponents_TextView
 style CardView
 style CardView_Dark
 style CardView_Light
+style Dexter_Internal_Theme_Transparent
 style EmptyTheme
 style MaterialAlertDialog_Material3
 style MaterialAlertDialog_Material3_Body_Text

@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.example.speech_recognition.app-mergeDebugResources-23:/values-iw/values-iw.xml",
+            "outputFile": "com.example.speech_recognition.app-mergeDebugResources-24:/values-iw/values-iw.xml",
             "map": [
                 {
                     "source": "C:\\Users\\phong\\.gradle\\caches\\transforms-3\\249713548fb8d92d9c56becf07cdffea\\transformed\\core-1.7.0\\res\\values-iw\\values-iw.xml",
