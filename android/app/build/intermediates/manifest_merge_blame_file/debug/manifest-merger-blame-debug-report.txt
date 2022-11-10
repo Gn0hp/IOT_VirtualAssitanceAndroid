@@ -11,108 +11,121 @@
 9-->D:\PTIT\1st-FinalYear\IOT\SpeechRecognition\android\app\src\main\AndroidManifest.xml
 10
 11    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
-11-->D:\PTIT\1st-FinalYear\IOT\SpeechRecognition\android\app\src\main\AndroidManifest.xml:5:5-80
-11-->D:\PTIT\1st-FinalYear\IOT\SpeechRecognition\android\app\src\main\AndroidManifest.xml:5:22-77
+11-->D:\PTIT\1st-FinalYear\IOT\SpeechRecognition\android\app\src\main\AndroidManifest.xml:6:5-80
+11-->D:\PTIT\1st-FinalYear\IOT\SpeechRecognition\android\app\src\main\AndroidManifest.xml:6:22-77
 12    <uses-permission android:name="android.permission.INTERNET" />
-12-->D:\PTIT\1st-FinalYear\IOT\SpeechRecognition\android\app\src\main\AndroidManifest.xml:6:5-67
-12-->D:\PTIT\1st-FinalYear\IOT\SpeechRecognition\android\app\src\main\AndroidManifest.xml:6:22-64
+12-->D:\PTIT\1st-FinalYear\IOT\SpeechRecognition\android\app\src\main\AndroidManifest.xml:7:5-67
+12-->D:\PTIT\1st-FinalYear\IOT\SpeechRecognition\android\app\src\main\AndroidManifest.xml:7:22-64
 13    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-13-->D:\PTIT\1st-FinalYear\IOT\SpeechRecognition\android\app\src\main\AndroidManifest.xml:7:5-79
-13-->D:\PTIT\1st-FinalYear\IOT\SpeechRecognition\android\app\src\main\AndroidManifest.xml:7:22-76
+13-->D:\PTIT\1st-FinalYear\IOT\SpeechRecognition\android\app\src\main\AndroidManifest.xml:8:5-79
+13-->D:\PTIT\1st-FinalYear\IOT\SpeechRecognition\android\app\src\main\AndroidManifest.xml:8:22-76
 14    <uses-permission android:name="android.permission.RECORD_AUDIO" />
-14-->D:\PTIT\1st-FinalYear\IOT\SpeechRecognition\android\app\src\main\AndroidManifest.xml:8:5-71
-14-->D:\PTIT\1st-FinalYear\IOT\SpeechRecognition\android\app\src\main\AndroidManifest.xml:8:22-68
+14-->D:\PTIT\1st-FinalYear\IOT\SpeechRecognition\android\app\src\main\AndroidManifest.xml:9:5-71
+14-->D:\PTIT\1st-FinalYear\IOT\SpeechRecognition\android\app\src\main\AndroidManifest.xml:9:22-68
 15
-16    <application
-16-->D:\PTIT\1st-FinalYear\IOT\SpeechRecognition\android\app\src\main\AndroidManifest.xml:10:5-41:19
-17        android:allowBackup="true"
-17-->D:\PTIT\1st-FinalYear\IOT\SpeechRecognition\android\app\src\main\AndroidManifest.xml:12:9-35
-18        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
-18-->[androidx.core:core:1.7.0] C:\Users\phong\.gradle\caches\transforms-3\249713548fb8d92d9c56becf07cdffea\transformed\core-1.7.0\AndroidManifest.xml:24:18-86
-19        android:dataExtractionRules="@xml/data_extraction_rules"
-19-->D:\PTIT\1st-FinalYear\IOT\SpeechRecognition\android\app\src\main\AndroidManifest.xml:13:9-65
-20        android:debuggable="true"
-21        android:extractNativeLibs="false"
-22        android:fullBackupContent="@xml/backup_rules"
-22-->D:\PTIT\1st-FinalYear\IOT\SpeechRecognition\android\app\src\main\AndroidManifest.xml:14:9-54
-23        android:icon="@mipmap/ic_launcher"
-23-->D:\PTIT\1st-FinalYear\IOT\SpeechRecognition\android\app\src\main\AndroidManifest.xml:15:9-43
-24        android:label="@string/app_name"
-24-->D:\PTIT\1st-FinalYear\IOT\SpeechRecognition\android\app\src\main\AndroidManifest.xml:16:9-41
-25        android:requestLegacyExternalStorage="true"
-25-->D:\PTIT\1st-FinalYear\IOT\SpeechRecognition\android\app\src\main\AndroidManifest.xml:11:9-52
-26        android:roundIcon="@mipmap/ic_launcher_round"
-26-->D:\PTIT\1st-FinalYear\IOT\SpeechRecognition\android\app\src\main\AndroidManifest.xml:17:9-54
-27        android:supportsRtl="true"
-27-->D:\PTIT\1st-FinalYear\IOT\SpeechRecognition\android\app\src\main\AndroidManifest.xml:18:9-35
-28        android:testOnly="true"
-29        android:theme="@style/Theme.Speech_Recognition" >
-29-->D:\PTIT\1st-FinalYear\IOT\SpeechRecognition\android\app\src\main\AndroidManifest.xml:19:9-56
-30        <activity
-30-->D:\PTIT\1st-FinalYear\IOT\SpeechRecognition\android\app\src\main\AndroidManifest.xml:21:9-27:20
-31            android:name="com.example.speech_recognition.SpeechRecognizing"
-31-->D:\PTIT\1st-FinalYear\IOT\SpeechRecognition\android\app\src\main\AndroidManifest.xml:22:13-46
-32            android:exported="false" >
-32-->D:\PTIT\1st-FinalYear\IOT\SpeechRecognition\android\app\src\main\AndroidManifest.xml:23:13-37
-33            <meta-data
-33-->D:\PTIT\1st-FinalYear\IOT\SpeechRecognition\android\app\src\main\AndroidManifest.xml:24:13-26:36
-34                android:name="android.app.lib_name"
-34-->D:\PTIT\1st-FinalYear\IOT\SpeechRecognition\android\app\src\main\AndroidManifest.xml:25:17-52
-35                android:value="" />
-35-->D:\PTIT\1st-FinalYear\IOT\SpeechRecognition\android\app\src\main\AndroidManifest.xml:26:17-33
-36        </activity>
+16    <permission
+16-->[androidx.core:core:1.9.0] C:\Users\phong\.gradle\caches\transforms-3\c6770eda00af6c105866b6db09ea3053\transformed\core-1.9.0\AndroidManifest.xml:22:5-24:47
+17        android:name="com.example.speech_recognition.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
+17-->[androidx.core:core:1.9.0] C:\Users\phong\.gradle\caches\transforms-3\c6770eda00af6c105866b6db09ea3053\transformed\core-1.9.0\AndroidManifest.xml:23:9-81
+18        android:protectionLevel="signature" />
+18-->[androidx.core:core:1.9.0] C:\Users\phong\.gradle\caches\transforms-3\c6770eda00af6c105866b6db09ea3053\transformed\core-1.9.0\AndroidManifest.xml:24:9-44
+19
+20    <uses-permission android:name="com.example.speech_recognition.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" />
+20-->[androidx.core:core:1.9.0] C:\Users\phong\.gradle\caches\transforms-3\c6770eda00af6c105866b6db09ea3053\transformed\core-1.9.0\AndroidManifest.xml:26:5-97
+20-->[androidx.core:core:1.9.0] C:\Users\phong\.gradle\caches\transforms-3\c6770eda00af6c105866b6db09ea3053\transformed\core-1.9.0\AndroidManifest.xml:26:22-94
+21
+22    <application
+22-->D:\PTIT\1st-FinalYear\IOT\SpeechRecognition\android\app\src\main\AndroidManifest.xml:11:5-45:19
+23        android:allowBackup="true"
+23-->D:\PTIT\1st-FinalYear\IOT\SpeechRecognition\android\app\src\main\AndroidManifest.xml:13:9-35
+24        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+24-->[androidx.core:core:1.9.0] C:\Users\phong\.gradle\caches\transforms-3\c6770eda00af6c105866b6db09ea3053\transformed\core-1.9.0\AndroidManifest.xml:28:18-86
+25        android:dataExtractionRules="@xml/data_extraction_rules"
+25-->D:\PTIT\1st-FinalYear\IOT\SpeechRecognition\android\app\src\main\AndroidManifest.xml:14:9-65
+26        android:debuggable="true"
+27        android:extractNativeLibs="false"
+28        android:fullBackupContent="@xml/backup_rules"
+28-->D:\PTIT\1st-FinalYear\IOT\SpeechRecognition\android\app\src\main\AndroidManifest.xml:15:9-54
+29        android:icon="@mipmap/ic_launcher"
+29-->D:\PTIT\1st-FinalYear\IOT\SpeechRecognition\android\app\src\main\AndroidManifest.xml:16:9-43
+30        android:label="@string/app_name"
+30-->D:\PTIT\1st-FinalYear\IOT\SpeechRecognition\android\app\src\main\AndroidManifest.xml:17:9-41
+31        android:requestLegacyExternalStorage="true"
+31-->D:\PTIT\1st-FinalYear\IOT\SpeechRecognition\android\app\src\main\AndroidManifest.xml:12:9-52
+32        android:roundIcon="@mipmap/ic_launcher_round"
+32-->D:\PTIT\1st-FinalYear\IOT\SpeechRecognition\android\app\src\main\AndroidManifest.xml:18:9-54
+33        android:supportsRtl="true"
+33-->D:\PTIT\1st-FinalYear\IOT\SpeechRecognition\android\app\src\main\AndroidManifest.xml:19:9-35
+34        android:testOnly="true"
+35        android:theme="@style/Theme.Speech_Recognition"
+35-->D:\PTIT\1st-FinalYear\IOT\SpeechRecognition\android\app\src\main\AndroidManifest.xml:20:9-56
+36        android:usesCleartextTraffic="true" >
+36-->D:\PTIT\1st-FinalYear\IOT\SpeechRecognition\android\app\src\main\AndroidManifest.xml:22:9-44
 37        <activity
-37-->D:\PTIT\1st-FinalYear\IOT\SpeechRecognition\android\app\src\main\AndroidManifest.xml:28:9-40:20
-38            android:name="com.example.speech_recognition.MainActivity"
-38-->D:\PTIT\1st-FinalYear\IOT\SpeechRecognition\android\app\src\main\AndroidManifest.xml:29:13-41
-39            android:exported="true" >
-39-->D:\PTIT\1st-FinalYear\IOT\SpeechRecognition\android\app\src\main\AndroidManifest.xml:30:13-36
-40            <intent-filter>
-40-->D:\PTIT\1st-FinalYear\IOT\SpeechRecognition\android\app\src\main\AndroidManifest.xml:31:13-35:29
-41                <action android:name="android.intent.action.MAIN" />
-41-->D:\PTIT\1st-FinalYear\IOT\SpeechRecognition\android\app\src\main\AndroidManifest.xml:32:17-69
-41-->D:\PTIT\1st-FinalYear\IOT\SpeechRecognition\android\app\src\main\AndroidManifest.xml:32:25-66
-42
-43                <category android:name="android.intent.category.LAUNCHER" />
-43-->D:\PTIT\1st-FinalYear\IOT\SpeechRecognition\android\app\src\main\AndroidManifest.xml:34:17-77
-43-->D:\PTIT\1st-FinalYear\IOT\SpeechRecognition\android\app\src\main\AndroidManifest.xml:34:27-74
-44            </intent-filter>
-45
-46            <meta-data
-46-->D:\PTIT\1st-FinalYear\IOT\SpeechRecognition\android\app\src\main\AndroidManifest.xml:24:13-26:36
-47                android:name="android.app.lib_name"
-47-->D:\PTIT\1st-FinalYear\IOT\SpeechRecognition\android\app\src\main\AndroidManifest.xml:25:17-52
-48                android:value="" />
-48-->D:\PTIT\1st-FinalYear\IOT\SpeechRecognition\android\app\src\main\AndroidManifest.xml:26:17-33
-49        </activity>
-50        <activity
-50-->[com.karumi:dexter:6.2.3] C:\Users\phong\.gradle\caches\transforms-3\d03ac87d0970d1ebc9a6632a474f6740\transformed\dexter-6.2.3\AndroidManifest.xml:27:9-29:72
-51            android:name="com.karumi.dexter.DexterActivity"
-51-->[com.karumi:dexter:6.2.3] C:\Users\phong\.gradle\caches\transforms-3\d03ac87d0970d1ebc9a6632a474f6740\transformed\dexter-6.2.3\AndroidManifest.xml:28:13-60
-52            android:theme="@style/Dexter.Internal.Theme.Transparent" />
-52-->[com.karumi:dexter:6.2.3] C:\Users\phong\.gradle\caches\transforms-3\d03ac87d0970d1ebc9a6632a474f6740\transformed\dexter-6.2.3\AndroidManifest.xml:29:13-69
-53
-54        <provider
-54-->[androidx.emoji2:emoji2:1.0.0] C:\Users\phong\.gradle\caches\transforms-3\534a23b582687ff41a7186a04e3a238c\transformed\emoji2-1.0.0\AndroidManifest.xml:26:9-34:20
-55            android:name="androidx.startup.InitializationProvider"
-55-->[androidx.emoji2:emoji2:1.0.0] C:\Users\phong\.gradle\caches\transforms-3\534a23b582687ff41a7186a04e3a238c\transformed\emoji2-1.0.0\AndroidManifest.xml:27:13-67
-56            android:authorities="com.example.speech_recognition.androidx-startup"
-56-->[androidx.emoji2:emoji2:1.0.0] C:\Users\phong\.gradle\caches\transforms-3\534a23b582687ff41a7186a04e3a238c\transformed\emoji2-1.0.0\AndroidManifest.xml:28:13-68
-57            android:exported="false" >
-57-->[androidx.emoji2:emoji2:1.0.0] C:\Users\phong\.gradle\caches\transforms-3\534a23b582687ff41a7186a04e3a238c\transformed\emoji2-1.0.0\AndroidManifest.xml:29:13-37
-58            <meta-data
-58-->[androidx.emoji2:emoji2:1.0.0] C:\Users\phong\.gradle\caches\transforms-3\534a23b582687ff41a7186a04e3a238c\transformed\emoji2-1.0.0\AndroidManifest.xml:31:13-33:52
-59                android:name="androidx.emoji2.text.EmojiCompatInitializer"
-59-->[androidx.emoji2:emoji2:1.0.0] C:\Users\phong\.gradle\caches\transforms-3\534a23b582687ff41a7186a04e3a238c\transformed\emoji2-1.0.0\AndroidManifest.xml:32:17-75
-60                android:value="androidx.startup" />
-60-->[androidx.emoji2:emoji2:1.0.0] C:\Users\phong\.gradle\caches\transforms-3\534a23b582687ff41a7186a04e3a238c\transformed\emoji2-1.0.0\AndroidManifest.xml:33:17-49
-61            <meta-data
-61-->[androidx.lifecycle:lifecycle-process:2.4.0] C:\Users\phong\.gradle\caches\transforms-3\0d1c36957947c0cced820087c8164150\transformed\lifecycle-process-2.4.0\AndroidManifest.xml:31:13-33:52
-62                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
-62-->[androidx.lifecycle:lifecycle-process:2.4.0] C:\Users\phong\.gradle\caches\transforms-3\0d1c36957947c0cced820087c8164150\transformed\lifecycle-process-2.4.0\AndroidManifest.xml:32:17-78
-63                android:value="androidx.startup" />
-63-->[androidx.lifecycle:lifecycle-process:2.4.0] C:\Users\phong\.gradle\caches\transforms-3\0d1c36957947c0cced820087c8164150\transformed\lifecycle-process-2.4.0\AndroidManifest.xml:33:17-49
-64        </provider>
-65    </application>
-66
-67</manifest>
+37-->D:\PTIT\1st-FinalYear\IOT\SpeechRecognition\android\app\src\main\AndroidManifest.xml:25:9-31:20
+38            android:name="com.example.speech_recognition.SpeechRecognizing"
+38-->D:\PTIT\1st-FinalYear\IOT\SpeechRecognition\android\app\src\main\AndroidManifest.xml:26:13-46
+39            android:exported="false" >
+39-->D:\PTIT\1st-FinalYear\IOT\SpeechRecognition\android\app\src\main\AndroidManifest.xml:27:13-37
+40            <meta-data
+40-->D:\PTIT\1st-FinalYear\IOT\SpeechRecognition\android\app\src\main\AndroidManifest.xml:28:13-30:36
+41                android:name="android.app.lib_name"
+41-->D:\PTIT\1st-FinalYear\IOT\SpeechRecognition\android\app\src\main\AndroidManifest.xml:29:17-52
+42                android:value="" />
+42-->D:\PTIT\1st-FinalYear\IOT\SpeechRecognition\android\app\src\main\AndroidManifest.xml:30:17-33
+43        </activity>
+44        <activity
+44-->D:\PTIT\1st-FinalYear\IOT\SpeechRecognition\android\app\src\main\AndroidManifest.xml:32:9-44:20
+45            android:name="com.example.speech_recognition.MainActivity"
+45-->D:\PTIT\1st-FinalYear\IOT\SpeechRecognition\android\app\src\main\AndroidManifest.xml:33:13-41
+46            android:exported="true" >
+46-->D:\PTIT\1st-FinalYear\IOT\SpeechRecognition\android\app\src\main\AndroidManifest.xml:34:13-36
+47            <intent-filter>
+47-->D:\PTIT\1st-FinalYear\IOT\SpeechRecognition\android\app\src\main\AndroidManifest.xml:35:13-39:29
+48                <action android:name="android.intent.action.MAIN" />
+48-->D:\PTIT\1st-FinalYear\IOT\SpeechRecognition\android\app\src\main\AndroidManifest.xml:36:17-69
+48-->D:\PTIT\1st-FinalYear\IOT\SpeechRecognition\android\app\src\main\AndroidManifest.xml:36:25-66
+49
+50                <category android:name="android.intent.category.LAUNCHER" />
+50-->D:\PTIT\1st-FinalYear\IOT\SpeechRecognition\android\app\src\main\AndroidManifest.xml:38:17-77
+50-->D:\PTIT\1st-FinalYear\IOT\SpeechRecognition\android\app\src\main\AndroidManifest.xml:38:27-74
+51            </intent-filter>
+52
+53            <meta-data
+53-->D:\PTIT\1st-FinalYear\IOT\SpeechRecognition\android\app\src\main\AndroidManifest.xml:28:13-30:36
+54                android:name="android.app.lib_name"
+54-->D:\PTIT\1st-FinalYear\IOT\SpeechRecognition\android\app\src\main\AndroidManifest.xml:29:17-52
+55                android:value="" />
+55-->D:\PTIT\1st-FinalYear\IOT\SpeechRecognition\android\app\src\main\AndroidManifest.xml:30:17-33
+56        </activity>
+57        <activity
+57-->[com.karumi:dexter:6.2.3] C:\Users\phong\.gradle\caches\transforms-3\d03ac87d0970d1ebc9a6632a474f6740\transformed\dexter-6.2.3\AndroidManifest.xml:27:9-29:72
+58            android:name="com.karumi.dexter.DexterActivity"
+58-->[com.karumi:dexter:6.2.3] C:\Users\phong\.gradle\caches\transforms-3\d03ac87d0970d1ebc9a6632a474f6740\transformed\dexter-6.2.3\AndroidManifest.xml:28:13-60
+59            android:theme="@style/Dexter.Internal.Theme.Transparent" />
+59-->[com.karumi:dexter:6.2.3] C:\Users\phong\.gradle\caches\transforms-3\d03ac87d0970d1ebc9a6632a474f6740\transformed\dexter-6.2.3\AndroidManifest.xml:29:13-69
+60
+61        <provider
+61-->[androidx.emoji2:emoji2:1.2.0] C:\Users\phong\.gradle\caches\transforms-3\ec6e2ba61c9a42dd8e0aa44ee71f9dfb\transformed\emoji2-1.2.0\AndroidManifest.xml:24:9-32:20
+62            android:name="androidx.startup.InitializationProvider"
+62-->[androidx.emoji2:emoji2:1.2.0] C:\Users\phong\.gradle\caches\transforms-3\ec6e2ba61c9a42dd8e0aa44ee71f9dfb\transformed\emoji2-1.2.0\AndroidManifest.xml:25:13-67
+63            android:authorities="com.example.speech_recognition.androidx-startup"
+63-->[androidx.emoji2:emoji2:1.2.0] C:\Users\phong\.gradle\caches\transforms-3\ec6e2ba61c9a42dd8e0aa44ee71f9dfb\transformed\emoji2-1.2.0\AndroidManifest.xml:26:13-68
+64            android:exported="false" >
+64-->[androidx.emoji2:emoji2:1.2.0] C:\Users\phong\.gradle\caches\transforms-3\ec6e2ba61c9a42dd8e0aa44ee71f9dfb\transformed\emoji2-1.2.0\AndroidManifest.xml:27:13-37
+65            <meta-data
+65-->[androidx.emoji2:emoji2:1.2.0] C:\Users\phong\.gradle\caches\transforms-3\ec6e2ba61c9a42dd8e0aa44ee71f9dfb\transformed\emoji2-1.2.0\AndroidManifest.xml:29:13-31:52
+66                android:name="androidx.emoji2.text.EmojiCompatInitializer"
+66-->[androidx.emoji2:emoji2:1.2.0] C:\Users\phong\.gradle\caches\transforms-3\ec6e2ba61c9a42dd8e0aa44ee71f9dfb\transformed\emoji2-1.2.0\AndroidManifest.xml:30:17-75
+67                android:value="androidx.startup" />
+67-->[androidx.emoji2:emoji2:1.2.0] C:\Users\phong\.gradle\caches\transforms-3\ec6e2ba61c9a42dd8e0aa44ee71f9dfb\transformed\emoji2-1.2.0\AndroidManifest.xml:31:17-49
+68            <meta-data
+68-->[androidx.lifecycle:lifecycle-process:2.4.1] C:\Users\phong\.gradle\caches\transforms-3\371d4428813d11175307b9e72a350208\transformed\lifecycle-process-2.4.1\AndroidManifest.xml:31:13-33:52
+69                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
+69-->[androidx.lifecycle:lifecycle-process:2.4.1] C:\Users\phong\.gradle\caches\transforms-3\371d4428813d11175307b9e72a350208\transformed\lifecycle-process-2.4.1\AndroidManifest.xml:32:17-78
+70                android:value="androidx.startup" />
+70-->[androidx.lifecycle:lifecycle-process:2.4.1] C:\Users\phong\.gradle\caches\transforms-3\371d4428813d11175307b9e72a350208\transformed\lifecycle-process-2.4.1\AndroidManifest.xml:33:17-49
+71        </provider>
+72    </application>
+73
+74</manifest>

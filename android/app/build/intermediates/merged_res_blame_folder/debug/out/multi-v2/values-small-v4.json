@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "com.example.speech_recognition.app-mergeDebugResources-24:/values-small-v4/values-small-v4.xml",
+            "outputFile": "com.example.speech_recognition.app-mergeDebugResources-28:/values-small-v4/values-small-v4.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\phong\\.gradle\\caches\\transforms-3\\fac35fa21dbd12379f5bfd01ae392218\\transformed\\material-1.5.0\\res\\values-small-v4\\values-small-v4.xml",
+                    "source": "C:\\Users\\phong\\.gradle\\caches\\transforms-3\\d570501ed8422ac3c5d39480119bfc6a\\transformed\\material-1.7.0\\res\\values-small-v4\\values-small-v4.xml",
                     "from": {
                         "startLines": "2,3,4,5",
                         "startColumns": "4,4,4,4",

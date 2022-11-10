@@ -4,45 +4,33 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
+
 import androidx.core.content.ContextCompat;
 
 import android.Manifest;
-import android.annotation.SuppressLint;
+
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.media.MediaPlayer;
 import android.net.Uri;
-import android.os.Build;
+
 import android.os.Bundle;
-import android.os.Environment;
-import android.speech.RecognitionListener;
+
 import android.speech.RecognizerIntent;
 import android.speech.SpeechRecognizer;
-import android.util.Log;
-import android.view.MenuItem;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.Button;
-import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
-
-import com.android.volley.Request;
-import com.android.volley.RequestQueue;
-import com.android.volley.Response;
-import com.android.volley.VolleyError;
-import com.android.volley.toolbox.StringRequest;
-import com.android.volley.toolbox.Volley;
-import com.example.speech_recognition.utils.SpeechRecognition.SpeechRecognizerManager;
 import com.example.speech_recognition.utils.server.Server;
-
+import java.io.DataOutputStream;
 import java.io.File;
-import java.net.URI;
+import java.io.IOException;
+import java.net.HttpURLConnection;
+import java.net.MalformedURLException;
+import java.net.URL;
 import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Comparator;
-import java.util.Locale;
-
 
 public class SpeechRecognizing extends AppCompatActivity {
     private TextView returnedText, returnedErr;
@@ -53,7 +41,7 @@ public class SpeechRecognizing extends AppCompatActivity {
     private String language;
     public Server server;
     private ArrayList<File> arr;
-    private String url = "http://192.168.1.98:80/";
+    private String espUrl = "http://192.168.1.98:8191/";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -134,6 +122,42 @@ public class SpeechRecognizing extends AppCompatActivity {
        if(res.contains("open music")){
            openMusic(res.substring(11));
        }
+       if(res.contains("led")){
+           handleLED(res);
+       }
+    }
+    private void handleLED(String cmd){
+       if(cmd.contains("warn")){
+            if(cmd.contains("on")){
+                httpCall("LED_WARN_ON");
+            }
+            else if(cmd.contains("off")){
+                httpCall("LED_WARN_OFF");
+            }
+       }
+       else{
+           int nth = containNumber(cmd);
+           if(cmd.contains("on")&& nth!=-1){
+               httpCall("LED_NTH/"+Integer.toString(nth));
+           }
+           else if(cmd.contains("on")){
+               httpCall("LED=ON");
+           }
+           else if(cmd.contains("off")){
+               httpCall("LED=OFF");
+           }
+       }
+    }
+    private int containNumber(String sample){
+        char[] chars = sample.toCharArray();
+        StringBuilder sb = new StringBuilder();
+        for(char c : chars){
+            if(Character.isDigit(c)){
+                sb.append(c);
+            }
+        }
+        String tmp = new String(sb);
+        return tmp.length()>0? Integer.parseInt(tmp): -1;
     }
     private void openMusic(String res){
         String[] stringArr = res.split("\\s");
@@ -165,7 +189,7 @@ public class SpeechRecognizing extends AppCompatActivity {
         MediaPlayer mediaPlayer = MediaPlayer.create(getApplicationContext(),uri);
         mediaPlayer.start();
 
-        int finalIndex = index;
+        int finalIndex = index+1;
         mediaPlayer.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
             @Override
             public void onCompletion(MediaPlayer mp) {
@@ -182,26 +206,36 @@ public class SpeechRecognizing extends AppCompatActivity {
             }
         });
     }
-
-    // xử lý tách câu lệnh cho
-
-    private void httpCall() {
-
-        RequestQueue queue = Volley.newRequestQueue(this);
-
-        StringRequest stringRequest = new StringRequest(Request.Method.GET, url,
-                new Response.Listener<String>() {
-                    @Override
-                    public void onResponse(String response) {
-                        Toast.makeText(SpeechRecognizing.this, "Success!", Toast.LENGTH_SHORT).show();
-                    }
-                }, new Response.ErrorListener() {
+    private void httpCall(String params)  {
+        URL Url = null;
+        try {
+            Url = new URL(espUrl+params);
+        } catch (MalformedURLException e) {
+            e.printStackTrace();
+        }
+        URL finalUrl = Url;
+        Thread thread = new Thread(new Runnable() {
             @Override
-            public void onErrorResponse(VolleyError error) {
-                Toast.makeText(SpeechRecognizing.this, "Sent!", Toast.LENGTH_SHORT).show();
+            public void run() {
+                try {
+                    assert finalUrl != null;
+                    HttpURLConnection con = (HttpURLConnection) finalUrl.openConnection();
+                    con.setRequestMethod("GET");
+
+//            con.setRequestProperty("User-Agent", USER_AGENT);
+                    int responseCode = con.getResponseCode();
+                    DataOutputStream dout = new DataOutputStream(con.getOutputStream());
+                    dout.writeUTF("Hello server");
+                    dout.flush();
+                    dout.close();
+                    System.out.println("GET Response Code :: " + responseCode);
+                    System.out.println("Connected!!! " +espUrl+params);
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
             }
         });
-
-        queue.add(stringRequest);
+        thread.start();
     }
+
 }
