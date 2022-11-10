@@ -3,12 +3,15 @@ package com.example.speech_recognition.utils.SpeechRecognition;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Build;
+import android.os.Bundle;
 import android.speech.RecognitionListener;
 import android.speech.RecognizerIntent;
 import android.speech.SpeechRecognizer;
 import android.util.Log;
+import android.widget.Toast;
 
-import com.example.speech_recognition.handleResult.onResultsReady;
+
+import java.util.ArrayList;
 
 public class SpeechRecognizerManager {
     private final static String TAG = "SpeechRecognizerManager";
@@ -16,24 +19,19 @@ public class SpeechRecognizerManager {
     public Intent mSpeechRecognizerIntent;
     public Context mContext;
     protected boolean mIsListening;
-    protected String language = "en"; //"en"
+    public String language = "en"; // "default en"
     protected long timeout = 2000l; // 2000 ms
     private Intent recognizerIntent;
     private String LOG_TAG="Voice_Recognition_Activity";
-    private onResultsReady mListener;
 
-    public SpeechRecognizerManager(Context context, onResultsReady listener)
+
+    public SpeechRecognizerManager(Context context, RecognitionListener recognitionListener, String _language)
     {
-        try {
-            mListener = listener;
-        } catch(ClassCastException e) {
-            Log.e(TAG, e.toString());
-        }
-
         mContext = context;
         mSpeechRecognizer = SpeechRecognizer.createSpeechRecognizer(context);
-        mSpeechRecognizer.setRecognitionListener(new SpeechRecognitionListener());
+        mSpeechRecognizer.setRecognitionListener(recognitionListener);
 
+        language = _language;
         // Create new intent
         mSpeechRecognizerIntent = new Intent(RecognizerIntent.ACTION_RECOGNIZE_SPEECH);
         mSpeechRecognizerIntent.putExtra(RecognizerIntent.EXTRA_CALLING_PACKAGE, context.getPackageName());
@@ -42,9 +40,7 @@ public class SpeechRecognizerManager {
         mSpeechRecognizerIntent.putExtra(RecognizerIntent.EXTRA_LANGUAGE_MODEL, language);
         mSpeechRecognizerIntent.putExtra(RecognizerIntent.EXTRA_ONLY_RETURN_LANGUAGE_PREFERENCE, language);
         mSpeechRecognizerIntent.putExtra(RecognizerIntent.EXTRA_PARTIAL_RESULTS, true); // For streaming result
-        mSpeechRecognizerIntent.putExtra(RecognizerIntent.EXTRA_SPEECH_INPUT_COMPLETE_SILENCE_LENGTH_MILLIS, timeout);
-        mSpeechRecognizerIntent.putExtra(RecognizerIntent.EXTRA_MAX_RESULTS,3 );
-
+//        mSpeechRecognizerIntent.putExtra(RecognizerIntent.EXTRA_SPEECH_INPUT_COMPLETE_SILENCE_LENGTH_MILLIS, timeout);
     }
 
     public void startListening()
@@ -75,10 +71,10 @@ public class SpeechRecognizerManager {
             mSpeechRecognizer.destroy();
             mSpeechRecognizer = null;
         }
-
     }
 
     public boolean ismIsListening() {
         return mIsListening;
     }
+
 }
