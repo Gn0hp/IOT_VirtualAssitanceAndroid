@@ -40,8 +40,10 @@ const int postingInterval = 2 * 1000; // post data every 2 seconds
 // ------------------------ END SETUP ------------------------------
 
 // Wifi and socket settings
-const char* ssid     = "Dung Duong";
-const char* password = "meomeogaugau";
+// const char* ssid     = "Dung Duong";
+// const char* password = "meomeogaugau"; // 192.168.1.98
+const char* ssid     = "LocusT36";
+const char* password = "ineedadogter";  //192.168.43.90
 bool state=false;
 
 

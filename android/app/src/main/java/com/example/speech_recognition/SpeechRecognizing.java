@@ -57,11 +57,13 @@ public class SpeechRecognizing extends AppCompatActivity {
         Intent i = getIntent();
         Bundle bundle = i.getExtras();
         arr = (ArrayList) bundle.getParcelableArrayList("songs");
+        espUrl =  "http://"+bundle.getString("server")+":8191/";
+        Toast.makeText(this, "server: "+espUrl, Toast.LENGTH_SHORT).show();
         language = i.getStringExtra("language");
 
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        Toast.makeText(this, "Current Language is: "+language, Toast.LENGTH_SHORT).show();
+//        Toast.makeText(this, "Current Language is: "+language, Toast.LENGTH_SHORT).show();
 
 //        resetSpeechRecognizer(speechManager.mSpeechRecognizer);
 

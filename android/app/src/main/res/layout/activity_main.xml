@@ -20,11 +20,23 @@
         android:id="@+id/selectLangSpinner"
         android:layout_width="409dp"
         android:layout_height="wrap_content"
-        tools:layout_editor_absoluteX="1dp"
-        tools:layout_editor_absoluteY="262dp"
-        tools:visibility="visible"
         android:background="@android:drawable/btn_dropdown"
         android:spinnerMode="dropdown"
-        />
+        app:layout_constraintBottom_toTopOf="@+id/btnHello"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_editor_absoluteX="1dp"
+        tools:visibility="visible" />
+
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/serverAddressInput"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Enter server address"
+        app:layout_constraintBottom_toTopOf="@+id/btnHello"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/selectLangSpinner" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

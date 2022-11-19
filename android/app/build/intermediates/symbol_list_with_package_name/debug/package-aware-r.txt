@@ -3012,6 +3012,7 @@ id selectLangSpinner
 id select_dialog_listview
 id selected
 id selection_type
+id serverAddressInput
 id sharedValueSet
 id sharedValueUnset
 id shortcut
@@ -3467,8 +3468,10 @@ string returned_error
 string returned_text
 string search_menu_title
 string start
+string start_Listenning
 string start_listenning
 string status_bar_notification_info_overflow
+string stop_music
 style AlertDialog_AppCompat
 style AlertDialog_AppCompat_Light
 style Animation_AppCompat_Dialog

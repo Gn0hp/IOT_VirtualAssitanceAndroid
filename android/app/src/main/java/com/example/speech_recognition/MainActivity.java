@@ -14,6 +14,8 @@ import android.widget.Button;
 
 import android.widget.Spinner;
 
+import com.google.android.material.textfield.TextInputEditText;
+import com.google.android.material.textfield.TextInputLayout;
 import com.karumi.dexter.Dexter;
 import com.karumi.dexter.MultiplePermissionsReport;
 import com.karumi.dexter.PermissionToken;
@@ -33,6 +35,7 @@ public class MainActivity extends AppCompatActivity {
     private Button btn;
     private Spinner spinner;
     private ArrayList<File> songs;
+    private TextInputEditText serverAddress;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -65,6 +68,7 @@ public class MainActivity extends AppCompatActivity {
 
         btn = findViewById(R.id.btnHello);
         spinner = findViewById(R.id.selectLangSpinner);
+        serverAddress = findViewById(R.id.serverAddressInput);
 
         String[] items = new String[]{"Select Language", "en", "vn"};
 
@@ -75,8 +79,9 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 String selectedItem = spinner.getSelectedItem().toString();
+                String serverAddr = String.valueOf(serverAddress.getText());
                 if (selectedItem.equals("Select Language")) selectedItem = "en";
-                startActivity(new Intent(getApplicationContext(), SpeechRecognizing.class).putExtra("language", selectedItem).putExtra("songs", songs));
+                startActivity(new Intent(getApplicationContext(), SpeechRecognizing.class).putExtra("language", selectedItem).putExtra("songs", songs).putExtra("server", serverAddr));
                 // .putExtra("key", value)....
             }
         });

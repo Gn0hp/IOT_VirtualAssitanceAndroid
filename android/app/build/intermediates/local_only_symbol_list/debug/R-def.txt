@@ -13,6 +13,7 @@ id btnHello
 id btnStopMusic
 id progressBar
 id selectLangSpinner
+id serverAddressInput
 id startListenerBtn
 id textViewReturnError
 id textViewReturnText
@@ -24,7 +25,9 @@ string app_name
 string returned_error
 string returned_text
 string start
+string start_Listenning
 string start_listenning
+string stop_music
 style Theme.Speech_Recognition
 xml backup_rules
 xml data_extraction_rules
