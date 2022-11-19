@@ -20,6 +20,10 @@
         "source": "C:\\Users\\phong\\.gradle\\daemon\\7.4\\com.example.speech_recognition.app-main-32:\\layout\\activity_main.xml"
     },
     {
+        "merged": "com.example.speech_recognition.app-merged_res-30:/layout_activity_main.xml.flat",
+        "source": "com.example.speech_recognition.app-main-32:/layout/activity_main.xml"
+    },
+    {
         "merged": "C:\\Users\\phong\\.gradle\\daemon\\7.4\\com.example.speech_recognition.app-merged_res-30:\\mipmap-mdpi_ic_launcher_round.webp.flat",
         "source": "C:\\Users\\phong\\.gradle\\daemon\\7.4\\com.example.speech_recognition.app-main-32:\\mipmap-mdpi\\ic_launcher_round.webp"
     },
@@ -48,12 +52,12 @@
         "source": "C:\\Users\\phong\\.gradle\\daemon\\7.4\\com.example.speech_recognition.app-main-32:\\xml\\data_extraction_rules.xml"
     },
     {
-        "merged": "C:\\Users\\phong\\.gradle\\daemon\\7.4\\com.example.speech_recognition.app-merged_res-30:\\mipmap-xhdpi_ic_launcher.webp.flat",
-        "source": "C:\\Users\\phong\\.gradle\\daemon\\7.4\\com.example.speech_recognition.app-main-32:\\mipmap-xhdpi\\ic_launcher.webp"
-    },
-    {
         "merged": "C:\\Users\\phong\\.gradle\\daemon\\7.4\\com.example.speech_recognition.app-merged_res-30:\\layout_activity_speech_reconizing.xml.flat",
         "source": "C:\\Users\\phong\\.gradle\\daemon\\7.4\\com.example.speech_recognition.app-main-32:\\layout\\activity_speech_reconizing.xml"
+    },
+    {
+        "merged": "C:\\Users\\phong\\.gradle\\daemon\\7.4\\com.example.speech_recognition.app-merged_res-30:\\mipmap-xhdpi_ic_launcher.webp.flat",
+        "source": "C:\\Users\\phong\\.gradle\\daemon\\7.4\\com.example.speech_recognition.app-main-32:\\mipmap-xhdpi\\ic_launcher.webp"
     },
     {
         "merged": "C:\\Users\\phong\\.gradle\\daemon\\7.4\\com.example.speech_recognition.app-merged_res-30:\\mipmap-xxxhdpi_ic_launcher_round.webp.flat",

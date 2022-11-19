@@ -5,7 +5,6 @@ INJECTED from D:\PTIT\1st-FinalYear\IOT\SpeechRecognition\android\app\src\main\A
 INJECTED from D:\PTIT\1st-FinalYear\IOT\SpeechRecognition\android\app\src\main\AndroidManifest.xml:3:1-47:12
 INJECTED from D:\PTIT\1st-FinalYear\IOT\SpeechRecognition\android\app\src\main\AndroidManifest.xml:3:1-47:12
 MERGED from [com.karumi:dexter:6.2.3] C:\Users\phong\.gradle\caches\transforms-3\d03ac87d0970d1ebc9a6632a474f6740\transformed\dexter-6.2.3\AndroidManifest.xml:17:1-32:12
-MERGED from [com.android.volley:volley:1.2.1] C:\Users\phong\.gradle\caches\transforms-3\71af9ddc6e7b4297fcf1143d426ca149\transformed\volley-1.2.1\AndroidManifest.xml:2:1-7:12
 MERGED from [com.google.android.material:material:1.7.0] C:\Users\phong\.gradle\caches\transforms-3\d570501ed8422ac3c5d39480119bfc6a\transformed\material-1.7.0\AndroidManifest.xml:17:1-26:12
 MERGED from [androidx.constraintlayout:constraintlayout:2.1.4] C:\Users\phong\.gradle\caches\transforms-3\28075e3b5fe6386b541742e3f2e4f8fe\transformed\constraintlayout-2.1.4\AndroidManifest.xml:2:1-11:12
 MERGED from [androidx.appcompat:appcompat-resources:1.5.1] C:\Users\phong\.gradle\caches\transforms-3\0758de52a88bd0e13e04f350fcb3ffe3\transformed\appcompat-resources-1.5.1\AndroidManifest.xml:17:1-22:12
@@ -157,8 +156,6 @@ INJECTED from D:\PTIT\1st-FinalYear\IOT\SpeechRecognition\android\app\src\main\A
 INJECTED from D:\PTIT\1st-FinalYear\IOT\SpeechRecognition\android\app\src\main\AndroidManifest.xml
 MERGED from [com.karumi:dexter:6.2.3] C:\Users\phong\.gradle\caches\transforms-3\d03ac87d0970d1ebc9a6632a474f6740\transformed\dexter-6.2.3\AndroidManifest.xml:22:5-24:41
 MERGED from [com.karumi:dexter:6.2.3] C:\Users\phong\.gradle\caches\transforms-3\d03ac87d0970d1ebc9a6632a474f6740\transformed\dexter-6.2.3\AndroidManifest.xml:22:5-24:41
-MERGED from [com.android.volley:volley:1.2.1] C:\Users\phong\.gradle\caches\transforms-3\71af9ddc6e7b4297fcf1143d426ca149\transformed\volley-1.2.1\AndroidManifest.xml:5:5-43
-MERGED from [com.android.volley:volley:1.2.1] C:\Users\phong\.gradle\caches\transforms-3\71af9ddc6e7b4297fcf1143d426ca149\transformed\volley-1.2.1\AndroidManifest.xml:5:5-43
 MERGED from [com.google.android.material:material:1.7.0] C:\Users\phong\.gradle\caches\transforms-3\d570501ed8422ac3c5d39480119bfc6a\transformed\material-1.7.0\AndroidManifest.xml:20:5-22:41
 MERGED from [com.google.android.material:material:1.7.0] C:\Users\phong\.gradle\caches\transforms-3\d570501ed8422ac3c5d39480119bfc6a\transformed\material-1.7.0\AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.constraintlayout:constraintlayout:2.1.4] C:\Users\phong\.gradle\caches\transforms-3\28075e3b5fe6386b541742e3f2e4f8fe\transformed\constraintlayout-2.1.4\AndroidManifest.xml:5:5-7:41
