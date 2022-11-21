@@ -6,8 +6,8 @@
 
 #define DHTTYPE DHT11
 // ----------------------------- LED AUTO WARN WHEN HUMID AND TEMP CHANGE SUDDENLY---------------
-const float TEMP_TO_WARN = ;
-const float HUMID_TO_WARN=;
+const float TEMP_TO_WARN = 45;
+const float HUMID_TO_WARN= 80;
 
 
 const char* ssid = "";
@@ -21,7 +21,7 @@ const int DHTPin = 5;
 const int channelID = 1855735; //
 const char* dhtServer = "api.thingspeak.com";
 String writeAPIKey = "43ABY00L7T9D5X6R";
-const int postingInterval = 2 * 1000; // post data every 2 seconds
+const int postingInterval = 5 * 1000; // post data every 5 seconds
 
 bool state = false;
 void setup() {
