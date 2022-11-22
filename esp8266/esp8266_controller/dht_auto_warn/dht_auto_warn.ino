@@ -6,7 +6,7 @@
 
 #define DHTTYPE DHT11
 // ----------------------------- LED AUTO WARN WHEN HUMID AND TEMP CHANGE SUDDENLY---------------
-const float TEMP_TO_WARN = 45;
+const float TEMP_TO_WARN = 40;
 const float HUMID_TO_WARN= 80;
 
 
