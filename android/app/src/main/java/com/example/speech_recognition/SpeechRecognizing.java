@@ -23,14 +23,20 @@ import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.example.speech_recognition.utils.Number;
+import com.example.speech_recognition.utils.RGBColor;
 import com.example.speech_recognition.utils.server.Server;
 import java.io.DataOutputStream;
 import java.io.File;
 import java.io.IOException;
+import java.lang.reflect.Field;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.HashMap;
 
 public class SpeechRecognizing extends AppCompatActivity {
     private TextView returnedText, returnedErr;
@@ -124,12 +130,12 @@ public class SpeechRecognizing extends AppCompatActivity {
        if(res.contains("open music")){
            openMusic(res.substring(11));
        }
-       if(res.contains("led")){
+       if(res.contains("light")){
            handleLED(res);
        }
     }
-    private void handleLED(String cmd){
-       if(cmd.contains("warn")){
+    private void handleLED(String cmd) {
+       if(cmd.contains("waring") || cmd.contains("warn") || cmd.contains("alert")){
             if(cmd.contains("on")){
                 httpCall("LED_WARN_ON");
             }
@@ -137,14 +143,67 @@ public class SpeechRecognizing extends AppCompatActivity {
                 httpCall("LED_WARN_OFF");
             }
        }
+       // TODO: handle brightness change path: /BRIGHTNESS/INCREASE <> DECREASE
+       // TODO: handle specify color (rgb) path: /CHANGE_COLOR?r=<>&g=<>&b=<>
+       else if (cmd.contains("brightness")){
+        if (cmd.contains("increase")){
+            // /BRIGHTNESS/INCREASE
+            httpCall("BRIGHTNESS/INCREASE");
+        } else if(cmd.contains("decrease")){
+            ///BRIGHTNESS/DECREASE
+            httpCall("BRIGHTNESS/DECREASE");
+        }
+       }
+       else if((cmd.contains("modify") || cmd.contains("modified") || cmd.contains("modifying")) && cmd.contains("color")){
+            ///CHANGE_COLOR?r=<>&g=<>&b=<>
+           // command: light modify color to <dark> <red>
+           int indexColor = cmd.indexOf("to")+3;
+           if(indexColor != -1){
+            String color = cmd.substring(indexColor);
+            String[] split = color.split(" ");
+            StringBuilder colorCode = new StringBuilder("COLOR_");
+            for(String i: split){
+                colorCode.append(i.toUpperCase()).append("_");
+            }
+            colorCode.deleteCharAt(colorCode.length()-1);
+               try {
+                   Field field = RGBColor.class.getField(colorCode.toString());
+                   int[] valueRgb = (int[]) field.get(null);
+                   String query = String.format("?r=%d&g=%d&b=%d", valueRgb[0], valueRgb[1], valueRgb[2]);
+                    httpCall("CHANGE_COLOR"+query);
+
+               } catch (NoSuchFieldException | IllegalAccessException e) {
+                   throw new RuntimeException(e);
+               }
+           }
+
+       }
        else{
            int nth = containNumber(cmd);
-           if(cmd.contains("on")&& nth!=-1){
-               httpCall("LED_NTH/"+Integer.toString(nth));
+           //TODO: handle light group on
+           // command: turn on the light of group <number>
+            if(cmd.contains("group") && nth != -1){
+               if(cmd.contains("turn on")){
+                   httpCall("ON/LED_GROUP/"+Integer.toString(nth));
+               }else if(cmd.contains("turn off")){
+                   // command: turn on the light of group <number>
+                   httpCall("OFF/LED_GROUP/"+Integer.toString(nth));
+               }
            }
+           else if(cmd.contains("turn on")&& nth!=-1){
+               //cmd: turn on the 6th light
+               httpCall("ON/LED_NTH/"+Integer.toString(nth));
+           }
+                //cmd turn off the number light
+           else if(cmd.contains("turn off")&& nth!=-1){
+                httpCall("OFF/LED_NTH/"+Integer.toString(nth));
+           }
+
+            //cmd turn on the light
            else if(cmd.contains("on")){
                httpCall("LED=ON");
            }
+//           cmd: turn off the light
            else if(cmd.contains("off")){
                httpCall("LED=OFF");
            }
@@ -159,7 +218,29 @@ public class SpeechRecognizing extends AppCompatActivity {
             }
         }
         String tmp = new String(sb);
-        return tmp.length()>0? Integer.parseInt(tmp): -1;
+        int res = -1;
+        if (tmp.length()>0) {
+            res = Integer.parseInt(tmp);
+        }
+        if (res != -1) return res;
+        String numberLight = getNumber(sample);
+        Number number = new Number();
+        HashMap<String, Integer> map = number.getNumbers();
+        if(map.containsKey(numberLight.toLowerCase())){
+            res = map.get(numberLight.toLowerCase());
+        }
+        return res;
+    }
+    private String getNumber(String sentence) {
+        String[] words = sentence.split(" ");
+        int idx = Arrays.asList(words).indexOf("light");
+
+        if (idx > 0) {
+            return words[idx - 1];
+
+        } else {
+            return "";
+        }
     }
     private void openMusic(String res){
         String[] stringArr = res.split("\\s");
