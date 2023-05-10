@@ -28,3 +28,6 @@ local.properties
 /android/.externalNativeBuild
 /android/.cxx
 /android/local.properties
+
+/android/.idea
+/android/app/build
